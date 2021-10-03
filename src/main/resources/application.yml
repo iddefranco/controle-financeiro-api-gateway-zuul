@@ -1,0 +1,29 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: controle-financeiro-api-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: 'http://controle-financeiro-eureka-server:8761/eureka'
+
+zuul:
+  routes:
+    financeiro:
+      serviceId: 'controle-financeiro'
+      path: '/controle-financeiro/**'
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 90000
+
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 20000
