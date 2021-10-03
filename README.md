@@ -1,5 +1,5 @@
-# controle-financeiro-eureka-serve
-Serviço responsável em fazer o discoery das aplicações.<br>
+# controle-financeiro-api-gateway-zuul
+Serviço responsável em receber as rquisições dos clients e repassa para os micro-serviços.<br>
 
 
 # Instruções para Desenvolvimento
@@ -19,8 +19,8 @@ Utilizamos a IDE [Intellij](https://www.jetbrains.com/pt-br/idea/) para desenvol
 Para rodar a aplicação em sua máquina siga os passos:
 - Cria o container do projeto
    ```
-    docker build -t controle-financeiro-eureka-server:v1 .
-    docker run -p 8761:8761 --name controle-financeiro-eureka-server --network controle-financeiro-net controle-financeiro-eureka-server:v1
+     docker build -t controle-fianceiro-api-gateway-zuul:v1 .
+     docker run -p 8765:8765 --name controle-fianceiro-api-gateway-zuul --network controle-financeiro-net controle-fianceiro-api-gateway-zuul:v1
    ```
 ---
 > Desenvolvido por Ednaldo Franco.
